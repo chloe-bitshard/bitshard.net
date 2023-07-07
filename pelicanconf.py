@@ -34,3 +34,5 @@ DEFAULT_PAGINATION = False
 PAGE_SAVE_AS = '{slug}.html'
 
 DEFAULT_DATE_FORMAT = '%d %B %Y'
+STATIC_PATHS = ['static/CNAME']
+EXTRA_PATH_METADATA = {'static/CNAME': {'path': 'CNAME'},}
