@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div id="markdownBody" class="markdownBody">
+    <div class="abstract row">
+      <div class="left">
+        <img src="{{SITEURL}}/theme/img/profile.png" alt="Profile Picture" class="profile">
+      </div>
+      <div class="row-center">
+        <p>Hey there, I'm <strong>Chloe Bitshard</strong>. I spend a lot of time building new tools and systems to help people be more productive.  I think a lot about how to improve personally, how to have a healthy relationship with work, and the evolving role of technology in our lives⁠.</p>
+        <p>For information about my site’s philosophy & method, see the <em><a href="/about" id="bitshard-about" class="link-page" title="'About This Website', Bitshard">About page</a></em>; for the website features & implementation. For information about myself, my use of other websites, and contact information, see the <em><a href="/me" id="bitshard-me" class="link-annotated link-page" title="'About Bitshard', Bitshard 2023">Links page</a></em>; to receive updates, news, & reviews, <em><a href="https://bitshard.substack.com/" id="bitshard-2023" class="link-annotated" data-link-icon="substack" data-link-icon-type="svg" title="'Bitshard.net newsletter (Substack subscription page)', Bitshard 2023">subscribe</a></em> to the newsletter.</p>
+      </div>
+    </div>
+    <div class="section-container">
+        <section id="newest" class="section">
+          <h1><a href="#newest" title="Link to section: § 'Newest'">Newest</a></h1><!-- NOTE: update /index-long when adding new ones -->
+          <ul>
+            {% for article in articles %}
+            <li>
+              <a href="{{ SITEURL }}/{{ article.url }}" class="link-annotated link-page" title="‘{{ article.title }}’, Bitshard 2023">{{ article.title }}</a>
+            </li>
+            {% endfor %}
+          </ul>
+        </section>
+        <section id="technology" class="section">
+          <h1><a href="#technology" title="Link to section: § 'Technology'">Technology</a></h1>
+          <p><span id="most-popular"></span></p>
+          <ul>
+            {% for article in articles %}
+            {% if "technology" in article.tags %}
+            <li>
+              <a href="{{ SITEURL }}/{{ article.url }}" class="link-annotated link-page" title="‘{{ article.title }}’, Bitshard 2023">{{ article.title }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </section>
+        <section id="personal" class="section">
+          <h1><a href="#personal" title="Link to section: § 'Personal'">Personal</a></h1>
+          <ul>
+            {% for article in articles %}
+            {% if "personal" in article.tags %}
+            <li>
+              <a href="{{ SITEURL }}/{{ article.url }}" class="link-annotated link-page" title="‘{{ article.title }}’, Bitshard 2023">{{ article.title }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </section>
+    </div>
+  </div>
+{% endblock %}

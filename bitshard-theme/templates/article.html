@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block header %}
+    <h1>
+      {{ article.title }}
+    </h1>
+    <div class="center article-metadata">
+      <span class="hint" title="Date the article was initially created">
+        {{ article.date.strftime('%Y-%m-%d') }}
+      </span> - 
+      <span class="hint" title="Date of last major change">
+        {{ article.lastupdate }} 
+      </span>
+      &mdash; 
+      {% if article.progress | lower == 'draft' %}
+        <span class="hint" title="The article is still in being written, is subject to major changes, and may be missing substantial portions">
+      {% elif article.progress | lower == 'in progress' %}
+        <span class="hint" title="The article is complete, but will likely receive changes in the future">
+      {% elif article.progress | lower == 'finished' %}
+        <span class="hint" title="The article is complete, and will probably not receive updates going forward">
+      {% else %}
+        <span>
+      {% endif %}
+        {{ article.progress | lower }}
+      </span>
+      &mdash; <span class="hint" title="My confidence in the accuracy of the article, from 1 to 10">
+        confidence</span>: {{ article.confidence }}
+      &mdash; <span class="hint" title="The importance of the article, from 1 to 10">
+        importance</span>: {{ article.confidence }}
+    </div>
+{% endblock %}
+
+{% block content %}
+<div id="markdownBody" class="markdownBody">
+    <div class="abstract">
+      {% if article.summary is defined and article.summary %}
+        <blockquote class="summary">{{ article.summary }}</blockquote>
+      {% endif %}
+    </div>
+    {{ article.content }}
+</div>
+{% endblock %}
