@@ -152,6 +152,28 @@ on the sides of the rows */
 .row .right {
     flex: 1;
 }
+.row {
+    display: flex;
+    flex-direction: row; /* Default direction is row */
+}
+
+@media (max-width: 600px) {
+    .no-show-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column; /* Stacks the children vertically */
+    }
+    .row .left,
+    .row .right,
+    .row .row-center {
+        flex: 0 0 100%; /* Forces each child to take the full width */
+    }
+}
+
 
 .hint {
     /* Line that is dotted */
