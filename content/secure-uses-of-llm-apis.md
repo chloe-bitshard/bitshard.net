@@ -6,7 +6,7 @@ Tags: technology, ai
 Author: Chloe Bitshard
 Progress: Draft
 Confidence: 4
-Summary: LLM usage has been criticized on a number of fronts; one of which is that by needing to use an external API, like OpenAI's, you are unable to use GPT-4 on secret information.  I propose that GPT-4 is capable of securely answering difficult questions about confidential data without exposing the data to OpenAI.
+Summary: LLM usage has been criticized on a number of fronts; one of which is that by needing to use an external API, like OpenAI's, you are unable to use GPT-4 on secret information.  I propose that GPT-4 is capable of securely answering difficult questions about confidential data without exposing the data to OpenAI.  Note: This is very much a work in progress.
 
 <p class="intro-paragraph drop-cap-de-zs">
 One of the main roadblocks to GPT-4 adoption in production has been the need to ensure that secure data remains secure.  One area where LLM responses can be extremely useful is when answering questions about large sets of data.  In this article, I will discuss a method for generating reports on confidential data using LLMs without exposing the data to the LLM.</p>
