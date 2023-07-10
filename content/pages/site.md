@@ -1,7 +1,7 @@
 Title: About
 Date: 2023-07-06
 Summary: 
-Author: Chloe Bitshard
+Author: Christine Bitshard
 
 <p class="intro-paragraph drop-cap-de-zs">
 This site is currently a work in progress.</p>

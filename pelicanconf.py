@@ -1,4 +1,4 @@
-AUTHOR = 'Chloe Bitshard'
+AUTHOR = 'Christine Bitshard'
 SITENAME = 'Bitshard'
 SITEURL = ''
 

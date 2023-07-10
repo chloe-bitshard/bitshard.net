@@ -3,7 +3,7 @@ Date: 2023-07-07
 LastUpdate: 2023-07-07
 Category: Technology
 Tags: technology, ai
-Author: Chloe Bitshard
+Author: Christine Bitshard
 Progress: Draft
 Confidence: 4
 Summary: LLM usage has been criticized on a number of fronts; one of which is that by needing to use an external API, like OpenAI's, you are unable to use GPT-4 on secret information.  I propose that GPT-4 is capable of securely answering difficult questions about confidential data without exposing the data to OpenAI.  Note: This is very much a work in progress.

@@ -4,7 +4,7 @@ LastUpdate: 2023-07-07
 Category: personal
 Tags: personal
 Summary: 
-Author: Chloe Bitshard
+Author: Christine Bitshard
 Progress: In Progress
 Confidence: 9
 

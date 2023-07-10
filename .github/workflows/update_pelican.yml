@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: chloe-bitshard/gh-pages-pelican-action@0.0.3
+    - uses: christine-bitshard/gh-pages-pelican-action@0.0.3
       env:
         GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         GH_PAGES_CNAME: www.bitshard.net
