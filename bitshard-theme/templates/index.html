@@ -61,6 +61,18 @@
             {% endfor %}
           </ul>
         </section>
+        <section id="books" class="section">
+          <h1><a href="#books" title="Link to section: § 'Books'">Books</a></h1>
+          <ul>
+            {% for article in articles %}
+            {% if "books" in article.tags %}
+            <li>
+              <a href="{{ SITEURL }}/{{ article.url }}" class="link-annotated link-page" title="‘{{ article.title }}’, Bitshard 2023">{{ article.title }}</a>
+            </li>
+            {% endif %}
+            {% endfor %}
+          </ul>
+        </section>
     </div>
   </div>
 {% endblock %}
