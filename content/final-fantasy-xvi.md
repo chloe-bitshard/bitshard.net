@@ -6,5 +6,6 @@ Tags: review, games
 Author: Chloe Bitshard
 Progress: Draft
 Confidence: 2
-Summary: I was very much looking forward to FF XVI, and while I started out loving it, I stopped playing as often at around the 50% mark.
+Summary: I was very much looking forward to FF XVI, and while I started out loving it, I stopped playing as often at the 60% mark.
 
+This
