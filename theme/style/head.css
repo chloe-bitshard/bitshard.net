@@ -1,0 +1,486 @@
+:root {
+    --body-max-width: 900px;
+    --body-side-padding: 20px;
+    --body-text-font-size: 20px;
+    --serif-font-family: "Source Serif Pro", "Apple Garamond", "Baskerville", "Libre Baskerville", "Droid Serif", "Times New Roman", "Times", serif, "Noto Emoji", "Quivira";
+}
+
+header h1 {
+    margin: auto;
+    text-align: center;
+    line-height: 1.15;
+    text-transform: none;
+    font-variant-caps: small-caps;
+    font-size: 2.5em;
+    font-weight: 600;
+    letter-spacing:-1px;
+    max-width: 650px;
+}
+
+body {
+    background-color: #f9f5d7;
+    color: #3c3836;
+    font-family: --serif-font-family;
+    font-size: var(--body-text-font-size);
+    max-width: var(--body-max-width);
+    padding: 0 var(--body-side-padding);
+    margin:0 auto;
+}
+a {
+    color: #9d0006;
+}
+a:hover {
+    background-color: #ebdbb2;
+}
+
+
+@media all and (max-width: 649px) {
+    .markdownBody {
+        --line-height: 1.35
+    }
+}
+
+@media all and (max-width: 999px) {
+    .markdownBody {
+        --line-height: 1.4
+    }
+}
+
+@media all and (max-width: 1199px) {
+    .markdownBody {
+        --line-height: 1.45
+    }
+}
+
+@media all and (min-width: 1200px) {
+    .markdownBody {
+        --line-height: 1.5
+    }
+}
+
+.markdownBody {
+    --base-block-spacing: 0.25em;
+    overflow-wrap: break-word;
+    font-variant-numeric: oldstyle-nums;
+    line-height:var(--line-height)
+}
+
+/* p.markdownBody should have indented paragraphs, unless intro-paragraph */
+.markdownBody p:not(.intro-paragraph) {
+    text-indent: 3em;
+}
+
+blockquote {
+    border: 1px solid #3c3836;
+    background-color: #f2e6bc;
+    padding: 5px 30px;
+}
+
+.markdownBody table, .markdownBody table td, .markdownBody table th {
+    border: solid 1px #3c3836;
+    background-color: #f2e6bc;
+    margin: auto;
+    border-spacing: 0;
+    border-collapse:collapse;
+    padding: 2px 6px;
+}
+
+p.intro-paragraph::first-letter {
+    font-family: Deutsche Zierschrift;
+    font-size: 6.625em;
+    line-height: 1.1;
+    margin: .01em .03em -.25em 0;
+    color:var(--drop-caps-de-zs-color)
+}
+p.intro-paragraph::first-line {
+    font-variant-caps:small-caps;
+}
+
+/* Layout */
+.section-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* adjust this to change the spacing between sections */
+  }
+
+  /* Keep sections as narrow as possible */
+  @media (max-width: 900px) { /* adjust this to change the breakpoint for 2-wide */
+    .section-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) { /* adjust this to change the breakpoint for 1-wide */
+    .section-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  
+
+.summary {
+    justify-content: space-between;
+}
+
+/* row */
+/* There is a .row class which can have .left, .center, and .right divs.  .left and .right should
+take up as little space as they can reasonably take.  This should allow us to have inline annotations
+on the sides of the rows */
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.center {
+    text-align: center;
+}
+.left {
+    text-align: left;
+}
+.right {
+    text-align: right;
+}
+.row .left {
+    flex: 1;
+}
+.row .row-center {
+    flex: 2;
+}
+.row .right {
+    flex: 1;
+}
+.row {
+    display: flex;
+    flex-direction: row; /* Default direction is row */
+}
+
+@media (max-width: 600px) {
+    .no-show-mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .row {
+        flex-direction: column; /* Stacks the children vertically */
+    }
+    .row .left,
+    .row .right,
+    .row .row-center {
+        flex: 0 0 100%; /* Forces each child to take the full width */
+    }
+}
+
+
+.hint {
+    /* Line that is dotted */
+    border-bottom: 1px dashed #3c3836;
+    cursor: help;
+}
+
+.article-metadata {
+    padding-top: 0.5em;
+    font-size: 0.825em;
+    font-style: italic;
+}
+
+/* Specifics */
+
+/* .profile img should be 250px at most, and should be cropped to a circle */
+img.profile {
+    max-width: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    /* Add a border around the circle */
+    /* Add drop shadow at an angle */
+    box-shadow: 0 0 26px #8f3f71;
+}
+
+.title {
+    font-weight: 700;
+    color: #3c3836;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+/* Italicize outro */
+.outro {
+    font-style: italic;
+    text-align: right;
+}
+
+.block {
+    display: block;
+}
+
+/* prefix each link of the header nav with '-', except the first two */
+nav#sidebar ul li:not(:first-child):not(:nth-child(2))::before {
+    content: " - ";
+    margin: 0 5px;
+}
+/* list should not have each item on a new line */
+nav#sidebar ul li {
+    list-style-type: none;
+    display: inline;
+}
+nav#sidebar ul {
+    padding: 0;
+}
+/* Add 20px padding-right to the first a*/
+nav#sidebar ul li:first-child {
+    padding-right: 20px;
+}
+
+/* Fonts */
+
+@charset "UTF-8";
+@font-face {
+    font-family: 'source serif pro';
+    font-weight: 400;
+    font-style: normal;
+    src: url(/theme/fonts/SourceSerifPro/SourceSerifPro-BASIC-Regular.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0020-007E, U + 00A0-00FF, U + 2010, U + 2013-2014, U + 2018-2019, U + 201C-201D, U + 2212
+}
+
+@font-face {
+    font-family: 'source serif pro';
+    font-weight: 400;
+    font-style: italic;
+    src: url(/theme/fonts/SourceSerifPro/SourceSerifPro-BASIC-RegularItalic.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0020-007E, U + 00A0-00FF, U + 2010, U + 2013-2014, U + 2018-2019, U + 201C-201D, U + 2212
+}
+
+@font-face {
+    font-family: 'source serif pro';
+    font-weight: 600;
+    font-style: normal;
+    src: url(/theme/fonts/SourceSerifPro/SourceSerifPro-BASIC-Semibold.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0020-007E, U + 00A0-00FF, U + 2010, U + 2013-2014, U + 2018-2019, U + 201C-201D, U + 2212
+}
+
+@font-face {
+    font-family: 'source serif pro';
+    font-weight: 700;
+    font-style: normal;
+    src: url(/theme/fonts/SourceSerifPro/SourceSerifPro-BASIC-Bold.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0020-007E, U + 00A0-00FF, U + 2010, U + 2013-2014, U + 2018-2019, U + 201C-201D, U + 2212
+}
+
+@font-face {
+    font-family: source sans pro;
+    font-weight: 400;
+    font-style: normal;
+    src: url(/theme/fonts/SourceSerifPro/SourceSansPro-BASIC-Regular.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0020-007E, U + 00A0-00FF, U + 2010, U + 2013-2014, U + 2018-2019, U + 201C-201D, U + 2212
+}
+
+@font-face {
+    font-family: source sans pro;
+    font-weight: 400;
+    font-style: italic;
+    src: url(/theme/fonts/SourceSerifPro/SourceSansPro-BASIC-RegularItalic.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0020-007E, U + 00A0-00FF, U + 2010, U + 2013-2014, U + 2018-2019, U + 201C-201D, U + 2212
+}
+
+@font-face {
+    font-family: source sans pro;
+    font-weight: 700;
+    font-style: normal;
+    src: url(/theme/fonts/SourceSerifPro/SourceSansPro-BASIC-Bold.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0020-007E, U + 00A0-00FF, U + 2010, U + 2013-2014, U + 2018-2019, U + 201C-201D, U + 2212
+}
+
+
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-A.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0041
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-B.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0042
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-C.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0043
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-D.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0044
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-E.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0045
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-F.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0046
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-G.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0047
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-H.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0048
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-I.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0049
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-J.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 004A
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-K.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 004B
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-L.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 004C
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-M.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 004D
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-N.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 004E
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-O.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 004F
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-P.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0050
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-Q.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0051
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-R.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0052
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-S.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0053
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-T.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0054
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-U.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0055
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-V.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0056
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-W.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0057
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-X.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0058
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-Y.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 0059
+}
+
+@font-face {
+    font-family: deutsche zierschrift;
+    src: url(/theme/fonts/drop-cap/de-zs/DeutscheZierschrift-Z.ttf?v=1604173830) format('truetype');
+    font-display: swap;
+    unicode-range:U + 005A
+}
