@@ -6,4 +6,6 @@ Tags: review, books
 Author: Christine Bitshard
 Progress: Draft
 Confidence: 2
-Summary: Todo
+Summary: Notes on my reread.  I never finished the series, due to some work obligations.  Ranged Touch’s discussion spurred me on to do a reread.
+
+[http://rangedtouch.com/2023/06/09/the-shadow-of-the-torturer-part-1/](Ranged Touch: Shelved by Genre)
