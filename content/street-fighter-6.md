@@ -3,7 +3,7 @@ Date: 2023-07-15
 LastUpdate: 2023-07-15
 Category: Games
 Tags: review, games
-Author: Chloe Bitshard
+Author: Christine Bitshard
 Progress: Draft
 Confidence: 5
 Summary: I was excitedly anticipating the release of Street Fighter 6.  While I was expecting to play using the new Modern controls, I’ve found myself defaulting to using Classic controls with almost every character.

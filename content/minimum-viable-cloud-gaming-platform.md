@@ -3,7 +3,7 @@ Date: 2023-07-06
 LastUpdate: 2023-07-07
 Category: Technology
 Tags: technology, games
-Author: Chloe Bitshard
+Author: Christine Bitshard
 Progress: Draft
 Confidence: 4
 Summary: Launching a cloud gaming platform is an infinitely appealing prospect for large technology companies.  Everyone's tried, but none have been particularly successful.  In this article, I walk through some of the ways a company could successfully launch a large cloud gaming platform.

@@ -3,7 +3,7 @@ Date: 2023-07-15
 LastUpdate: 2023-07-15
 Category: Games
 Tags: review, games
-Author: Chloe Bitshard
+Author: Christine Bitshard
 Progress: Draft
 Confidence: 2
 Summary: I’ve been trying to figure out what I like and dislike about Myst-style games.  What I like: The puzzle solving, seeing interesting environments, and seeing interesting puzzle design.  What don’t I like: Moving back and forth via tedious traversal, and pixel-hunting for various things I can click on.

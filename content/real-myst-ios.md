@@ -3,7 +3,7 @@ Date: 2023-07-15
 LastUpdate: 2023-07-15
 Category: Games
 Tags: review, games
-Author: Chloe Bitshard
+Author: Christine Bitshard
 Progress: Draft
 Confidence: 2
 Summary: Traversal by tapping and holding to move forward, and moving your finger to control the look direction sucks.  I think it would be tedious to the point that it would exacerbate anything I might hope to gain by considering whether first person movement exacerbates difficulties w/r/t pixel hunting.
